@@ -1,0 +1,8 @@
+openapi: "3.0.3"
+info:
+  title: "pontosimples API"
+  description: "pontosimples API"
+  version: "1.0.0"
+servers:
+- url: "https://pontosimples"
+paths: {}
