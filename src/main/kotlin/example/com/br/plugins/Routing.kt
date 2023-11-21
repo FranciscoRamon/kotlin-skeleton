@@ -6,7 +6,7 @@ import example.com.br.blog.presenters.http.blogRouters
 
 fun Application.configureRouting() {
     routing {
-        route("blog"){
+        route("/v1/blog"){
             blogRouters()
         }
     }

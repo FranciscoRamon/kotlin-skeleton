@@ -1,0 +1,16 @@
+ktor:
+  isDev: true
+
+  deployment:
+    port: 8080
+    deployment: local
+
+  database:
+    url: "jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;"
+    driver: "org.h2.Driver"
+    user: "sa"
+    password: ""
+
+  application:
+    modules:
+      - example.com.br.Application.main

@@ -1,1 +1,1 @@
-rootProject.name = "pontosimples"
+rootProject.name = "skeleton"

@@ -1,4 +1,4 @@
-package example.com.br.blog.application.article
+package example.com.br.blog.application.article.command
 
 data class CreateArticleCommand(
     val id: String,

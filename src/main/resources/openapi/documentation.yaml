@@ -1,23 +1,75 @@
 openapi: "3.0.3"
 info:
-  title: "Application API"
-  description: "Application API"
+  title: "skeleton API"
+  description: "skeleton API"
   version: "1.0.0"
 servers:
-  - url: "http://0.0.0.0:8080"
+- url: "http://localhost:8080"
 paths:
-  /:
+  /v1/blog/articles:
     get:
-      description: "Hello World!"
+      description: ""
       responses:
         "200":
-          description: "OK"
+          description: ""
           content:
-            text/plain:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/Map_String"
+    post:
+      description: ""
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: "#/components/schemas/CreateArticleRequest"
+        required: true
+      responses:
+        "201":
+          description: "Created"
+          content:
+            '*/*':
               schema:
                 type: "string"
               examples:
                 Example#1:
-                  value: "Hello World!"
+                  value: "Artigo criado com sucesso"
+        "200":
+          description: ""
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/Map_String"
+  /metrics:
+    get:
+      description: ""
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                type: "string"
 components:
   schemas:
+    ArticleDto:
+      type: "object"
+      properties:
+        id:
+          type: "string"
+        title:
+          type: "string"
+        body:
+          type: "string"
+    Map:
+      type: "object"
+      properties: {}
+    Map_String:
+      type: "string"
+    CreateArticleRequest:
+      type: "object"
+      properties:
+        title:
+          type: "string"
+        body:
+          type: "string"
